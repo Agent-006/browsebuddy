@@ -1,15 +1,22 @@
 "use client";
 
 import React from "react";
-import { useChat } from "ai/react";
+import { Message, useChat } from "ai/react";
 import Messages from "./Messages";
 import ChatInput from "./ChatInput";
 
-export default function ChatWrapper({ sessionId }: { sessionId: string }) {
+export default function ChatWrapper({
+  sessionId,
+  initialMessages,
+}: {
+  sessionId: string;
+  initialMessages: Message[];
+}) {
   const { messages, handleInputChange, handleSubmit, setInput, input } =
     useChat({
       api: "/api/chat-stream",
       body: { sessionId },
+      initialMessages
     });
 
   return (
