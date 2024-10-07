@@ -1,7 +1,4 @@
-"use client";
-
 import { Vortex } from "@/components/ui/vortex";
-import { GridBackgroundDemo } from "../components/ui/GridBackgroundDemo";
 
 export default function Home() {
   return (
